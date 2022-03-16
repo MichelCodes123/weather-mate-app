@@ -1,0 +1,353 @@
+@use "nav";
+
+
+:root {
+    --info-font: "Fredoka One", "cursive", "sans-serif";
+    --main-font: "Outfit", "sans-serif"
+
+  }
+  
+html{
+    box-sizing: border-box;
+}
+
+*, *::before, *::after{
+
+    box-sizing: inherit;
+}
+
+body{
+    height: 100vh;
+    margin: 0;
+    background-color: #346080;
+
+
+}
+form
+{
+    display: inline;
+}
+h1
+{
+    --main-font: "Outfit", "sans-serif";
+}
+
+hr
+{
+    position: relative;
+    top: -1rem;
+    width: 25vw;
+    min-width: 20rem;
+    margin-left: 0;
+    border: none;
+    background-color: white;
+    height: 0.2rem;
+
+    @media (max-width: 800px) {
+        position: static;
+        top: 100px;
+        width: 100vw;
+        
+    }
+}
+p{
+    margin: 0;
+    font-family: var(--main-font);
+}
+
+//BEGINNING OF CLASS STYLINGS..
+
+// Dashboard Styling
+.dashboard{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(3,1fr);
+    gap: 20px;
+    margin: 0 5%;
+    height: 60vh;
+
+    .dashboard-item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border-radius: 0.5rem;
+        transition: 0.5s ease;
+
+    }
+    .dashboard-item::after
+    {
+        content: "";
+        position: absolute; 
+        top: 0;
+        bottom: -5px;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        border-radius: 0.5rem;
+        background-color:#16486b;
+
+    }
+    .dashboard-item:hover
+    {
+
+        color: white;
+        transform: translateY(-5px);
+    }
+    .dashboard-item:hover .temp-icon{
+        filter: invert(1);
+    }
+    .dashboard-item:hover *{
+       color: white;
+    }
+    .temperature
+    {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 25% 75%;
+        grid-column: span 3;
+        grid-row: span 3;
+    }
+    .humidity{
+        grid-row: span 2;
+    }
+    .pressure{
+        grid-row: span 2;
+    }
+
+   
+
+@media (max-width: 1000px) {
+
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(5,1fr);
+    height: 70vh;
+
+
+
+    .temperature
+    {
+        grid-column: span 2;
+        grid-row: span 3;
+
+    }
+    .humidity{
+
+        grid-row: span 1;
+    
+    }
+    .pressure{
+
+    grid-row: span 1;
+    }
+
+}
+
+}   
+
+// Styling the temperature/ main block of the dashboard
+//It is pulled out of the main dashboard styling block in the SCSS file since it contains a more complex layout.
+.temperature {
+    .feel{
+        margin-left: 20%;
+        font-size: 2.5vw;
+
+    @media (max-width: 900px) {
+ 
+        font-size: 1.2rem;
+    
+    }
+   
+    
+    }
+    .forecast {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 100%;
+        border-top: solid 0.5rem #346080;
+
+        p {
+            font-size: 20px;
+        }
+
+    }
+       
+    .temp-main
+    {
+        font-size: 1.3rem;
+        grid-column: span 3;
+        margin: 0 5%;
+
+        @media (min-width: 1000px) {
+ 
+            font-size: 2vw;
+        
+        }
+
+      
+    }
+    .temp-max-min
+    {
+            padding: 0;
+        margin: 0;
+        font-weight: 500;
+        font-size: 2vw;
+        display: inline-block;
+        font-family: var(--info-font);
+
+    @media (max-width: 900px) {
+ 
+        font-size: 4vw;
+    
+    }
+    }
+    .temp-second {
+        border-left: solid 0.5rem #346080;
+        border-right: solid 0.5rem #346080;
+    }
+    .temp-icon {
+            width: 40%;
+            height: auto;
+        }
+    .date{
+        display: flex;
+        font-size: 0.7em;
+        color: grey;
+        font-style: italic;
+        justify-content: space-between;
+
+    }
+    .mini{
+        color: grey;
+    }
+    .mini, p{
+        transition: 0.5s ease;
+    }
+    
+  
+
+}
+
+.value{
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    font-size: 3vw;
+    display: inline-block;
+    font-family: var(--info-font);
+
+    @media (max-width: 900px) {
+ 
+        font-size: 1.5rem;
+    
+    }
+}
+
+// Reused Button Styling
+.btn-search {
+    font-family: var(--main-font);
+    font-size: 1rem;
+
+
+    position: absolute;
+    border: none;
+    border-radius: 0.5rem;
+
+    // top:0;
+    // bottom:0;
+    // left: 90%;
+    // right: -15%;
+
+    transform: translate(-60px);
+    width: 90px;
+    height: calc(2rem + 5px);
+    
+    color: rgba(0, 0, 0, 1);
+    background-color: rgb(143, 185, 143);
+    transition:  1s ease;
+    
+    @media (max-width: 1000px) {
+       display: none;
+        
+    }
+ }
+.btn-search:hover{
+    color: rgba(0, 0, 0, 1);
+    transform: translateX(0);
+    cursor: pointer;
+}
+.btn-info{
+    position: absolute; 
+    background-color: white;
+    border: none;
+    border-radius: 100%;
+    font-size: 1rem;
+    bottom: 20px;
+    left: 95vw;
+
+    @media(max-width: 700px){
+        left: 90vw;
+    }
+}
+input[type = text] {
+    font-family: var(--main-font);
+    font-weight: 300;
+    font-style: italic;
+    text-align: center;
+    font-size: 1rem;
+    color: grey;
+
+    position: relative;
+    z-index: 2;
+    outline: none;
+    
+    
+    border: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    
+}
+.main-text-search
+{
+display: inline-block;
+position: relative;
+margin: 5vh 5%;
+width: 20vw;
+height: 2rem;
+@media (max-width: 1000px) {
+    width: 90vw;
+    
+}
+
+}
+.main-text-search::after
+{
+  content: "";
+  position: absolute; 
+  top: 0;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  border-radius: 0.5rem;
+  background-color:#E1E8ED;
+
+}
+.glass
+{
+    position: absolute;
+    z-index: 0;
+    left: 95%;
+    top: 30%;
+    
+    @media (max-width: 1000px) {
+      z-index: 2;
+        
+    }
+}

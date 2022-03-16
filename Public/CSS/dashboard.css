@@ -1,0 +1,386 @@
+/* General Nav bar styling */
+:root {
+  --info-font: "Fredoka One", "cursive", "sans-serif";
+  --main-font: "Outfit", "sans-serif"
+  --primary-colour: #6EB9EF;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  display: inline-block;
+  padding-left: 5%;
+  height: 3vh;
+}
+
+li {
+  display: inline-block;
+  padding: 0.5rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--main-font);
+  font-weight: 500;
+}
+
+ul {
+  margin: 0;
+  padding-right: 10%;
+}
+
+/* Specific Styling */
+.burger {
+  display: none;
+}
+
+.burger-patty {
+  margin: 5px;
+  background-color: white;
+  width: 25px;
+  height: 3px;
+}
+
+.nav-links {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+.nav-title {
+  color: white;
+  font-weight: 500;
+}
+
+.ul-hidden {
+  height: 4rem;
+  display: block;
+}
+
+@media (max-width: 800px) {
+  li {
+    display: block;
+    border-bottom: solid;
+  }
+
+  ul {
+    height: 0;
+    overflow: hidden;
+    transition: 1s ease;
+    width: 100%;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .burger {
+    top: 20px;
+    right: 50px;
+    position: absolute;
+    display: inline-block;
+  }
+}
+.fa-github {
+  font-size: 1.2rem;
+  color: white;
+}
+
+:root {
+  --info-font: "Fredoka One", "cursive", "sans-serif";
+  --main-font: "Outfit", "sans-serif" ;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  background-color: #346080;
+}
+
+form {
+  display: inline;
+}
+
+h1 {
+  --main-font: "Outfit", "sans-serif";
+}
+
+hr {
+  position: relative;
+  top: -1rem;
+  width: 25vw;
+  min-width: 20rem;
+  margin-left: 0;
+  border: none;
+  background-color: white;
+  height: 0.2rem;
+}
+@media (max-width: 800px) {
+  hr {
+    position: static;
+    top: 100px;
+    width: 100vw;
+  }
+}
+
+p {
+  margin: 0;
+  font-family: var(--main-font);
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+  margin: 0 5%;
+  height: 60vh;
+}
+.dashboard .dashboard-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 0.5rem;
+  transition: 0.5s ease;
+}
+.dashboard .dashboard-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: 0.5rem;
+  background-color: #16486b;
+}
+.dashboard .dashboard-item:hover {
+  color: white;
+  transform: translateY(-5px);
+}
+.dashboard .dashboard-item:hover .temp-icon {
+  filter: invert(1);
+}
+.dashboard .dashboard-item:hover * {
+  color: white;
+}
+.dashboard .temperature {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 25% 75%;
+  grid-column: span 3;
+  grid-row: span 3;
+}
+.dashboard .humidity {
+  grid-row: span 2;
+}
+.dashboard .pressure {
+  grid-row: span 2;
+}
+@media (max-width: 1000px) {
+  .dashboard {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    height: 70vh;
+  }
+  .dashboard .temperature {
+    grid-column: span 2;
+    grid-row: span 3;
+  }
+  .dashboard .humidity {
+    grid-row: span 1;
+  }
+  .dashboard .pressure {
+    grid-row: span 1;
+  }
+}
+
+.temperature .feel {
+  margin-left: 20%;
+  font-size: 2.5vw;
+}
+@media (max-width: 900px) {
+  .temperature .feel {
+    font-size: 1.2rem;
+  }
+}
+.temperature .forecast {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+  border-top: solid 0.5rem #346080;
+}
+.temperature .forecast p {
+  font-size: 20px;
+}
+.temperature .temp-main {
+  font-size: 1.3rem;
+  grid-column: span 3;
+  margin: 0 5%;
+}
+@media (min-width: 1000px) {
+  .temperature .temp-main {
+    font-size: 2vw;
+  }
+}
+.temperature .temp-max-min {
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+  font-size: 2vw;
+  display: inline-block;
+  font-family: var(--info-font);
+}
+@media (max-width: 900px) {
+  .temperature .temp-max-min {
+    font-size: 4vw;
+  }
+}
+.temperature .temp-second {
+  border-left: solid 0.5rem #346080;
+  border-right: solid 0.5rem #346080;
+}
+.temperature .temp-icon {
+  width: 40%;
+  height: auto;
+}
+.temperature .date {
+  display: flex;
+  font-size: 0.7em;
+  color: grey;
+  font-style: italic;
+  justify-content: space-between;
+}
+.temperature .mini {
+  color: grey;
+}
+.temperature .mini, .temperature p {
+  transition: 0.5s ease;
+}
+
+.value {
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+  font-size: 3vw;
+  display: inline-block;
+  font-family: var(--info-font);
+}
+@media (max-width: 900px) {
+  .value {
+    font-size: 1.5rem;
+  }
+}
+
+.btn-search {
+  font-family: var(--main-font);
+  font-size: 1rem;
+  position: absolute;
+  border: none;
+  border-radius: 0.5rem;
+  transform: translate(-60px);
+  width: 90px;
+  height: calc(2rem + 5px);
+  color: black;
+  background-color: #8fb98f;
+  transition: 1s ease;
+}
+@media (max-width: 1000px) {
+  .btn-search {
+    display: none;
+  }
+}
+
+.btn-search:hover {
+  color: black;
+  transform: translateX(0);
+  cursor: pointer;
+}
+
+.btn-info {
+  position: absolute;
+  background-color: white;
+  border: none;
+  border-radius: 100%;
+  font-size: 1rem;
+  bottom: 20px;
+  left: 95vw;
+}
+@media (max-width: 700px) {
+  .btn-info {
+    left: 90vw;
+  }
+}
+
+input[type=text] {
+  font-family: var(--main-font);
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
+  font-size: 1rem;
+  color: grey;
+  position: relative;
+  z-index: 2;
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+}
+
+.main-text-search {
+  display: inline-block;
+  position: relative;
+  margin: 5vh 5%;
+  width: 20vw;
+  height: 2rem;
+}
+@media (max-width: 1000px) {
+  .main-text-search {
+    width: 90vw;
+  }
+}
+
+.main-text-search::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  border-radius: 0.5rem;
+  background-color: #E1E8ED;
+}
+
+.glass {
+  position: absolute;
+  z-index: 0;
+  left: 95%;
+  top: 30%;
+}
+@media (max-width: 1000px) {
+  .glass {
+    z-index: 2;
+  }
+}

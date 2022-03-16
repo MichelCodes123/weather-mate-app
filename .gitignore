@@ -1,0 +1,5 @@
+.env
+dashboard.html
+remainingFeatures.md
+.DS_Store
+/node_modules

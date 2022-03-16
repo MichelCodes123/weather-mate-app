@@ -1,0 +1,209 @@
+// Stylesheet for everything pertaining to the landing page of this website.
+
+@use "nav";
+@use "error";
+:root {
+    --info-font: "Fredoka One", "cursive", "sans-serif";
+    --main-font: "Outfit", "sans-serif"
+
+  }
+  
+html{
+    box-sizing: border-box;
+}
+
+*, *::before, *::after{
+
+    box-sizing: inherit;
+}
+
+body{
+    position: relative;
+    margin: 0;
+    font-family: var(--main-font);
+    height: 100vh;
+    background-color: #6EB9EF;
+
+}
+
+
+img {
+    filter: invert(1);
+    transition: 1s ease;
+  
+}
+
+// Beginning of class styling
+
+// Button stylings 
+
+.btn-search {
+    font-family: var(--main-font);
+    position: absolute;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0;
+
+    width: 170px;
+    color: rgba(0, 0, 0, 1);
+    background-color: rgb(143, 185, 143);
+    transform: translate(-115px);
+    height: calc(4rem + 5px);
+    font-size: 2rem;
+    padding: 0 1rem;
+    transition:  1s ease;
+    
+    @media (max-width: 700px) {
+       display: none;
+        
+    }
+ }
+.btn-search:hover{
+    color: rgba(0, 0, 0, 1);
+    transform: translate(-5px);
+    cursor: pointer;
+}
+.btn-info{
+    position: absolute; 
+    background-color: white;
+    border: none;
+    border-radius: 100%;
+    font-size: 1rem;
+    bottom: 20px;
+    left: 95vw;
+
+    @media(max-width: 700px){
+        left: 90vw;
+    }
+}
+input[type = text] {
+    font-family: var(--main-font);
+    font-weight: 300;
+    font-style: italic;
+    text-align: center;
+    font-size: 2rem;
+    color: grey;
+
+    position: relative;
+    z-index: 2;
+    outline: none;
+    
+    border: none;
+    width: 40vw;
+    height:4rem;
+    border-radius: 0.5rem;
+    
+
+@media (max-width: 700px) {
+    width: 80vw;
+    
+}
+}
+
+
+
+
+// Main content styling
+.centering-container{
+    min-height: calc(100vh - 6rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-title{
+    position: relative;
+    color: white;
+    font-weight: 700;
+
+}
+
+.main-container{
+
+    display: flex;
+    flex-direction: column;
+
+}
+.main-image
+{
+    align-self: center;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    width: auto;
+    height: 20vh;
+}
+.main-text-search
+{
+display: inline-block;
+position: relative;
+}
+
+.main-text-search::after
+{
+  content: "";
+  position: absolute;  top: 0;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  border-radius: 0.5rem;
+    
+    
+    background-color:#E1E8ED;
+}
+
+.nav-divider
+{
+    position: relative;
+    top: -1rem;
+    width: 25vw;
+    min-width: 20rem;
+    margin-left: 0;
+    border: none;
+    background-color: white;
+    height: 0.2rem;
+
+    @media (max-width: 800px) {
+        position: static;
+        top: 100px;
+        width: 100vw;
+        
+    }
+}
+
+.glass
+{
+    display: hidden;
+    position: absolute;
+    z-index: 1;
+    left: 90%;
+    top: 40%;
+    
+    @media (max-width: 700px) {
+      z-index: 2;
+        
+    }
+}
+
+
+
+
+
+// CSS Classes that control the main animations on the landing page
+.fade-out
+{
+    transform: translateX(30px);
+    opacity: 0;
+
+}
+.fade-in{
+    transform: translateX(0);
+    opacity: 1;  
+}
+.return{
+    transform: translateX(-60px);
+}
+
+
+
+

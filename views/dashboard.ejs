@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherMate</title>
+
+
+    <!-- Fonts -->
+    <!-- CSS only -->
+
+    <script src="https://kit.fontawesome.com/3d68889fc1.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Fredoka+One&family=Outfit:wght@100;400&family=Spartan&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets and Favicon -->
+    <link rel="Icon" href="Images/cloudFav.ico">
+    <link rel="stylesheet" href="/CSS/dashboard.css">
+
+
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+
+        <h1>
+            <a class="nav-title" href="/index.html">WEATHERMATE</a>
+
+        </h1>
+
+        <ul class="nav-links-ul">
+
+            <li> <i class="fa-brands fa-github"></i> <a class="nav-links"
+                    href="https://github.com/MichelCodes123">Github</a></li>
+
+        </ul>
+
+        <div class="burger">
+            <div class="burger-patty top-patty"></div>
+            <div class="burger-patty bottom-patty"></div>
+
+        </div>
+
+    </nav>
+    <hr>
+
+
+
+    <div class="holder">
+        <label>
+            <div class=main-text-search>
+
+                <form action="/dashboard" method="post">
+
+                    <input maxlength = "25"  autocomplete="off" name="cityName" type="text" placeholder="Enter New City..." required>
+                    <i class=" glass fa-solid fa-magnifying-glass"></i>
+                    <button class="btn-search"> Submit <i class=" space fa-solid fa-magnifying-glass"></i></button>
+                </form>
+
+            </div>
+
+        </label>
+
+
+        <main class="centering-container">
+
+            <div class="dashboard">
+                <div class="dashboard-item temperature">
+
+                    <div class=temp-main>
+                        <div class="date">
+                            <p>
+                                <%= cityName %>, <%= countryCode %>
+                            </p>
+                            <p>
+                                <%= times %>
+                            </p>
+                        </div>
+                        <h1 class="value">
+                            <%= temp %> &deg;C
+                        </h1>
+                        <h2 class="value feel">
+                            <%= desc %>
+                        </h2>
+                    </div>
+
+                    <div class="temp-first forecast">
+                        <p> Today </p>
+                        <img src="<%= src1 %>" alt="<%= alt1 %>" class="temp-icon">
+                        <h2 class="temp-max-min">
+                            <%= tdyTemp %> &deg;C /<span class=mini>
+                                    <%= minTemp1 %> &deg;C
+                                </span>
+                        </h2>
+                    </div>
+                    <div class="temp-second forecast">
+                        <p>
+                            <%= day2 %>
+                        </p>
+                        <img class="temp-icon" src="<%= src2 %>" alt="<%= alt2 %>">
+                        <h2 class="temp-max-min">
+                            <%= tmrTemp %> &deg;C /<span class=mini>
+                                    <%= minTemp2 %> &deg;C
+                                </span>
+                        </h2>
+                    </div>
+                    <div class="temp-third forecast">
+                        <p>
+                            <%= day3 %>
+                        </p>
+                        <img class="temp-icon" src="<%= src3 %>" alt="<%= alt3 %>">
+                        <h2 class="temp-max-min">
+                            <%= nextTemp %> &deg;C /<span class=mini>
+                                    <%= minTemp3 %> &deg;C
+                                </span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="dashboard-item humidity">
+                    <p>Humidity</p>
+                    <h1 class="value">
+                        <%= item1 %> %
+                    </h1>
+                </div>
+                <div class="dashboard-item windspeed">
+                    <p>Wind Speed</p>
+                    <h1 class="value">
+                        <%= item2%> m/s
+                    </h1>
+                </div>
+                <div class="dashboard-item pressure">
+                    <p>Pressure</p>
+                    <h1 class="value">
+                        <%= item3 %> kPa
+                    </h1>
+                </div>
+                <div class="dashboard-item precipitation">
+                    <p> Precipitation </p>
+                    <h1 class="value">
+                        <%= item4 %> %
+                    </h1>
+                </div>
+
+            </div>
+
+
+        </main>
+
+        <button class="btn-info">?</button>
+
+
+        <!-- Scripts -->
+        <script>
+            let infoBTN = document.querySelector(".btn-info");
+
+            infoBTN.addEventListener("click", () => {
+                console.log("help");
+                alert("Note: To ensure that you find the city in the correct country of your choosing, you can enter your searches with the following format -> (city,countrycode). Ex. Toronto,CA ");
+            })
+
+        </script>
+        <script src="JS/nav.js"></script>
+
+
+</body>
+
+</html>

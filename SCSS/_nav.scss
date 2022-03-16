@@ -1,0 +1,115 @@
+/* General Nav bar styling */
+
+
+:root
+{
+    --info-font: "Fredoka One", "cursive", "sans-serif";
+    --main-font: "Outfit", "sans-serif"
+    --primary-colour: #6EB9EF;
+}
+
+a{
+    
+    text-decoration: none;
+ 
+}
+
+h1 {
+    display: inline-block;
+    padding-left: 5%;
+    height: 3vh;
+}
+
+li { 
+    display: inline-block;
+    padding: 0.5rem;
+}
+
+nav
+{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family:  var(--main-font);
+    font-weight: 500;
+
+
+}
+ul
+{
+    margin: 0;
+    padding-right: 10%;
+}
+
+
+/* Specific Styling */
+.burger
+{
+    display: none;
+}
+
+.burger-patty
+{
+    margin: 5px;
+    background-color: white;
+    width: 25px;
+    height: 3px;
+}
+
+.nav-links
+{
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-decoration: none;
+}
+.nav-title
+{
+    color: white;
+    font-weight: 500;
+
+}
+.ul-hidden
+{
+    height: 4rem;
+    display: block;
+  
+}
+
+@media (max-width: 800px) {
+
+    li {
+        display: block;
+        border-bottom: solid;
+    }
+    ul
+    {
+        height: 0;
+        overflow: hidden;
+        transition:  1s ease;
+        width: 100%;
+    }
+    nav {
+        flex-direction: column;  
+        align-items: flex-start;
+    }
+    
+    .burger
+    {
+        top: 20px;
+        right: 50px;
+        position: absolute;
+        display: inline-block;
+    }
+
+}
+
+.fa-github
+{
+    font-size: 1.2rem;
+    color: white;
+}
+
+
+
