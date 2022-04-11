@@ -4,8 +4,8 @@
   "description": "Simple Weather App",
   "main": "server.js",
   "scripts": {
+     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
     "comps": "sass --no-source-map --watch SCSS:Public/CSS",
     "work": "run-p comps start"
   },
