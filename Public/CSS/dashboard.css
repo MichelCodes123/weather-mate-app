@@ -328,7 +328,7 @@ p {
 }
 @media (max-width: 700px) {
   .btn-info {
-    left: 90vw;
+    display: none;
   }
 }
 
