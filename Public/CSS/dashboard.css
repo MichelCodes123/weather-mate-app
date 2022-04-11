@@ -275,7 +275,7 @@ p {
   color: grey;
 }
 .temperature .mini, .temperature p {
-  transition: 0.5s ease;
+  transition: color 0.5s ease;
 }
 
 .value {

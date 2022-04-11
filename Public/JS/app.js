@@ -27,7 +27,7 @@ function reset() {
 }
 function finish() {
     $("img").removeClass("return fade-in")
-    img.style.transition = "1s ease";
+    img.style.transition = "opacity 1s ease,transform 1s ease";
     $("img").addClass("fade-in");
     img.setAttribute("src", srcs[newImage()]);
 

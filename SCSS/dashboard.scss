@@ -226,7 +226,7 @@ p{
         color: grey;
     }
     .mini, p{
-        transition: 0.5s ease;
+        transition: color 0.5s ease;
     }
     
   
@@ -269,7 +269,7 @@ p{
     
     color: rgba(0, 0, 0, 1);
     background-color: rgb(143, 185, 143);
-    transition:  1s ease;
+    transition: 1s ease;
     
     @media (max-width: 1000px) {
        display: none;
