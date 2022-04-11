@@ -155,10 +155,6 @@ function sanitize(req, res, next) {
     else {
         next()
     }
-
-
-    //Sanitize inputs with special characters, exclude ","
-
 }
 
 async function getCoords(URL) {

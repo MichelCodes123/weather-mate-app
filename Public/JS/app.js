@@ -5,7 +5,7 @@ let but = document.querySelector("button");
 let img = document.querySelector("img");
 
 
-// Code to control the landing page animation
+// Code to control the landing page animation... each stage of the animation is separated into a different function
 setInterval(() => {
 
     move();
