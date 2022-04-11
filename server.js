@@ -10,11 +10,11 @@ let regex = /[&=<>]/g;
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/Public"));
 
 
 app.get("/", function (req, res) {
-    res.sendFile(__dirname + "/public/index.html");
+    res.sendFile(__dirname + "/Public/index.html");
 });
 app.get("/not-found", function (req, res) {
 
