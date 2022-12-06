@@ -259,6 +259,7 @@ function toCaps(desc) {
         array[i] = array[i].replace(regex, (value) => value.toUpperCase())
     ]
 
+    
     return array.join(" ");
 
 }
